@@ -18,7 +18,7 @@ const Category = () => {
         <>
             <h2>{category.toUpperCase()}</h2>
             <div className='category-container'>
-                {products &&
+                {products && products.length &&
                     products.map(product => {
                             return (
                                 <ProductCard key={product.id} product={product}></ProductCard>
