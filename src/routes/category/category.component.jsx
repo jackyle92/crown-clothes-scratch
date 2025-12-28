@@ -18,10 +18,10 @@ const Category = () => {
         <>
             <h2>{category.toUpperCase()}</h2>
             <div className='category-container'>
-                {products && products.length &&
+                {products &&
                     products.map(product => {
                             return (
-                                <ProductCard key={product?.id} product={product}></ProductCard>
+                                <ProductCard key={product.id} product={product}></ProductCard>
                             )
                         })
                 }

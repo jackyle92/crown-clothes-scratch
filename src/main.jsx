@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import {BrowserRouter} from 'react-router-dom';
 import App from './App.jsx'
@@ -8,7 +7,6 @@ import './index.scss'
 import {CartProvider} from "./contexts/cart.context.jsx";
 
 createRoot(document.getElementById('root')).render(
-    <StrictMode>
       <BrowserRouter>
           <UserProvider>
               <CategoriesProvider>
@@ -18,5 +16,4 @@ createRoot(document.getElementById('root')).render(
               </CategoriesProvider>
           </UserProvider>
       </BrowserRouter>
-    </StrictMode>,
 )
