@@ -21,7 +21,7 @@ const Category = () => {
                 {products && products.length &&
                     products.map(product => {
                             return (
-                                <ProductCard key={product.id} product={product}></ProductCard>
+                                <ProductCard key={product?.id} product={product}></ProductCard>
                             )
                         })
                 }
