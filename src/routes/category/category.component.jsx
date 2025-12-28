@@ -8,23 +8,21 @@ import {CategoriesContext} from "../../contexts/categories.context.jsx";
 const Category = () => {
     const { category } = useParams();
     const {categoriesMap} = useContext(CategoriesContext);
-    const [products, setProducts] = useState([categoriesMap[category]]);
+    const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        setProducts(categoriesMap[category]);
+        if (categoriesMap[category]) {
+            setProducts(categoriesMap[category]);
+        }
     }, [category, categoriesMap])
 
     return(
         <>
             <h2>{category.toUpperCase()}</h2>
             <div className='category-container'>
-                {products &&
-                    products.map(product => {
-                            return (
-                                <ProductCard key={product.id} product={product}></ProductCard>
-                            )
-                        })
-                }
+                {products.map(product => (
+                    <ProductCard key={product.id} product={product} />
+                ))}
             </div>
         </>
     )
